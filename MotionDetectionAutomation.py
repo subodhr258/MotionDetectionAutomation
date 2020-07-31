@@ -7,7 +7,7 @@ import time
 import cv2
 import pyautogui
 
-f10count = 0
+count = 0
 text = "Unoccupied"
 prevText = "Unoccupied"
 changed = False
@@ -70,9 +70,9 @@ while True:
 
 	# draw the text and timestamp on the frame
 	if prevText != text:
-		pyautogui.press('space')
-		print("Pressed space: ",f10count)
-		f10count+=1
+		pyautogui.press('playpause')
+		print("Pressed: ",count)
+		count+=1
 		prevText = text
 	cv2.putText(frame, "Room Status: {}".format(text), (10, 20),
 		cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
